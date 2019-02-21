@@ -1,7 +1,9 @@
 ---
-hello:
-  message: "Hello Developers!"
-
+message: "Hello Developers!"
+inner:
+  foo: b4r
 complex:
   config:
-    foo: "b4r"
+    url: http://foo.dev
+    username: smalik
+    password: l33thac#er

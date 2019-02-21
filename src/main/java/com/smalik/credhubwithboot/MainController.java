@@ -1,5 +1,7 @@
 package com.smalik.credhubwithboot;
 
+import com.smalik.credhubwithboot.ApplicationConfiguration.ServiceConfig;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -7,19 +9,27 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class MainController {
 
-    @Value("${hello.message:Hello World!}")
-    private String helloMessage;
+    @Value("${message:Hello World!}")
+    private String message;
 
-    @Value("${complex.config.foo:bar}")
-    private String complexConfigFoo;
+    @Value("${inner.foo:bar}")
+    private String innerFoo;
 
-    @GetMapping("/hello")
-    public String sayHello() {
-        return helloMessage;
+    @Autowired
+    private ServiceConfig config;
+
+    @GetMapping("/message")
+    public String getMessage() {
+        return message;
     }
 
-    @GetMapping("/complex")
-    public String getComplexConfig() {
-        return complexConfigFoo;
+    @GetMapping("/inner")
+    public String getInnerFoo() {
+        return innerFoo;
+    }
+
+    @GetMapping("/config")
+    public String getConfig() {
+        return String.format("Url=%s, Username=%s, Password=%s", config.getUrl(), config.getUsername(), config.getPassword());
     }
 }

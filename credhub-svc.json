@@ -1,0 +1,11 @@
+{
+  "message": "Hello Cloud!",
+  "inner": {
+    "foo": "=bat="
+  },
+  "complex": {
+    "url": "https://cloud.io",
+    "username": "claudio",
+    "password": "5tr4tu5"
+  }
+}

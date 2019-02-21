@@ -1,7 +1,4 @@
 ---
-hello:
-  message: ${vcap.services.credhub-svc.credentials.message}
-
-complex:
-  config:
-    foo: ${vcap.services.credhub-svc.credentials.complex.foo}
+message: ${vcap.services.credhub-svc.credentials.message}
+inner:
+  foo: ${vcap.services.credhub-svc.credentials.inner.foo}
