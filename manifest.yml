@@ -1,0 +1,11 @@
+---
+applications:
+- name: credhub-with-boot
+  memory: 1G
+  path: build/libs/credhub-with-boot-0.0.1-SNAPSHOT.jar
+  routes:
+  - route: credhub-with-boot-pivot-smalik.apps.pcfone.io
+  services:
+  - credhub-svc
+  buildpacks:
+  - java_buildpack_offline

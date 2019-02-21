@@ -1,0 +1,7 @@
+---
+hello:
+  message: "Hello Developers!"
+
+complex:
+  config:
+    foo: "b4r"
